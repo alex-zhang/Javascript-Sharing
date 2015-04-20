@@ -1,5 +1,26 @@
 # Javascript-Sharing
 
+```javascript
+var v = function() { return 1; }
+var t = function() { return false; }
+
+(function() {
+    if(t()) {
+        t = function() { return false; }
+        v = function() { return 2; }
+    }
+    
+    t = function() { return false };
+    
+    if(t() && [] == ![]) {
+        v = function() { return 3; }
+        function t() { return true; }
+    }
+})();
+
+console.log(v());
+```
+
 ### JavaScript 中所有变量都是对象，除了两个例外 null 和 undefined
 
 ```javascript
