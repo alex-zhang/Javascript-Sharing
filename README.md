@@ -1,27 +1,28 @@
-# Javascript-Sharing
+# Js-Sharing
 
-```javascript
-var v = function() { return 1; }
-var t = function() { return false; }
+-----------------------------------------------------------------
 
-(function() {
-    if(t()) {
-        t = function() { return false; }
-        v = function() { return 2; }
-    }
-    
-    t = function() { return false };
-    
-    if(t() && [] == ![]) {
-        v = function() { return 3; }
-        function t() { return true; }
-    }
-})();
+## 初级篇
++ js的历史
++ 基础知识
++ Js 周边
+    + nodejs/iojs
+    + grunt/gulp
+    + bower
+    + TypeScript/CoffeeScript/AtScript/ES6
+    + Backbone/Emberjs/AngularJs/React
+    + stylus
+    + Jade/HandlebarsJS/EJs/Underscore
+    + BootStrap/Fundation/JQueryUI/Sencha/Dojo
+    + JQuery/Prototype
+    + Express(Web Server)
+    + Pomelo(GameServer)
+    + QUnit/Jasmine
+    + egreat/PhoneGap/Cordovar/ReactNative/ionic
+    + pixi/Phaser
++ CMD/AMD
 
-console.log(v());
-```
-
-### JavaScript 中所有变量都是对象，除了两个例外 null 和 undefined
+### js 中所有变量都是对象，除了两个例外 null 和 undefined
 
 ```javascript
 false.toString(); // 'false'
@@ -95,7 +96,7 @@ Foo.prototype = {
 
 ### 属性查找
 
-当查找一个对象的属性时，JavaScript 会向上遍历原型链，直到找到给定名称的属性为止。
+当查找一个对象的属性时，js 会向上遍历原型链，直到找到给定名称的属性为止。
 
 到查找到达原型链的顶部 - 也就是 Object.prototype - 但是仍然没有找到指定的属性，就会返回 undefined。
 
@@ -121,7 +122,22 @@ Foo.prototype = 1; // 无效
 o.hasOwnProperty('key');
 ```
 
+-----------------------------------------------------------------
 
+## 中级篇
+
++ 原型的继承
++ 对象作用域
++ new
++ ==
++ js 代码阅读
+
+### js 中的 == 规则
+
+```javascript
+[] == ![]
+
+```
 
 ## 语法
 
@@ -147,4 +163,33 @@ Number.prototype = Object.defineProperty(
 ````
 0.1 + 0.2 = 0.30000000000000004
 
+```javascript
+var v = function() { return 1; }
+var t = function() { return false; }
 
+(function() {
+    if(t()) {
+        t = function() { return false; }
+        v = function() { return 2; }
+    }
+    
+    t = function() { return false };
+    
+    if(t() && [] == ![]) {
+        v = function() { return 3; }
+        function t() { return true; }
+    }
+})();
+
+console.log(v());
+```
+
+-----------------------------------------------------------------
+
+## 高级篇
+
++ GC in JS
++ new in ES5
++ new in ES6
++ Promise
++ Generator/Yeild
